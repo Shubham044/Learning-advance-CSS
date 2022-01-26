@@ -1,0 +1,87 @@
+*{
+    padding: 0%;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #272727;
+    display: grid;
+    place-items: center;
+    animation: changebg 12s linear infinite;
+}
+
+@keyframes changebg {
+    0%{
+        background-color: #9c27b0;
+    }
+    20%{
+        background-color: #009688;
+    }
+    40%{
+        background-color: #2196f3;
+    }
+    60%{
+        background-color: #c4431c;
+    }
+    80%{
+        background-color: yellowgreen;
+    }
+    100%{
+        background-color: #9c27b0;
+    }
+}
+
+ul{ 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+ul li{
+    list-style: none;
+}
+
+ul li a{
+    color: rgb(209, 207, 66);
+    padding: 8px 15px;
+    margin: 0 20px;
+    text-decoration: none;
+    position: relative;
+}
+
+
+ul li a::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    border-left: 2px solid rgb(209, 207, 66);
+    border-top: 2px solid rgb(209,207,66);
+    transition: all 0.3s ;
+    box-sizing: border-box;
+}
+
+ul li a::after{
+    content: "";
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    position:absolute;
+    bottom: 0px;
+    right: 0px;
+    border-right: 2px solid rgb(209, 207, 66);
+    border-bottom: 2px solid rgb(209,207,66);
+    transition: all 0.4s ;
+}
+
+ul li a:hover:before ,
+ul li a:hover:after{
+    width: 10%;
+    height: 20%;
+    transform: rotate(360deg);
+}
